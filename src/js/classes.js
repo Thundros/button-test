@@ -150,7 +150,9 @@
 
 			console.log ( this.gameButton.alpha );
 
-			if ( this.gameButton.alpha === 1 ) { this.__buttonLocked = false; }
+			if ( this.gameButton.alpha === 1 ) {
+				this.__buttonLocked = false;
+			}
 
 			this.gameButton.update ( );
 			this.optionsButton.update ( );
