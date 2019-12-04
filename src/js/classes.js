@@ -48,9 +48,13 @@
 
 		}
 
-		update ( ) {
+		update ( __buttonAlpha ) {
 
-			if ( this.button.alpha < 1 ) { this.__buttonLocked = true; }
+			this.__buttonAlpha = __buttonAlpha;
+
+			if ( this.__buttonAlpha === 1 ) {
+				this.__buttonLocked = false;
+			}
 
 		}
 
@@ -150,13 +154,9 @@
 
 			console.log ( this.gameButton.alpha );
 
-			if ( this.gameButton.alpha === 1 ) {
-				this.__buttonLocked = false;
-			}
-
-			this.gameButton.update ( );
-			this.optionsButton.update ( );
-			this.creditsButton.update ( );
+			this.gameButton.update ( this.gameButton.alpha );
+			this.optionsButton.update ( this.optionsButton.alpha );
+			this.creditsButton.update ( this.creditsButton.alpha );
 
 		}
 
